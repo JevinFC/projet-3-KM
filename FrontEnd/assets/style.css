@@ -52,6 +52,9 @@ body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 header {
 	display: flex;
@@ -94,6 +97,10 @@ nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 	cursor: pointer;
+}
+.lien-login{
+	text-decoration: none;
+	color: inherit;
 }
 nav img {
 	height: 20px;
@@ -213,11 +220,46 @@ input[type="submit"]{
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
+	cursor: pointer;
+	border: none;
 }
 
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 15px;
+}
+.titreLogin{
+	text-align: center;
+	color: #1D6154;
+	margin-top: 150px;
+	margin-bottom: 60px;
+	font-size: 30px;
+}
+.form-login{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+label[for="email-login"], label[for="mdp-login"]{
+	margin-bottom: 5px;
+}
+#email-login, #mdp-login{
+	width: 380px;
+	height: 50px;
+	margin-bottom: 30px;
+	border:none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#connexion{
+	width: 180px;
+	height: 40px;
+}
+footer{
+	margin-top: auto;
+}
+.footer-li{
+	position: absolute;
+	right: 100px;
 }
 
