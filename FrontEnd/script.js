@@ -7,7 +7,6 @@ const boutonAppartements = document.querySelector(".appartements")
 const boutonHotelsRestaurants = document.querySelector(".hotels-restaurants")
 const sectionGallery = document.querySelector(".gallery")
 
-
 async function genererCreation(creation) {
     sectionGallery.innerHTML = "";
     for (let i = 0; i < creation.length; i++) {
@@ -30,8 +29,17 @@ async function genererCreation(creation) {
 boutonTous.addEventListener("click", async function(){
     genererCreation(creation)
 })
+boutonObjets.addEventListener("click", async function(){
+    const creationObjets = creation.filter(article => article.categoryId ===1)
+    genererCreation(creationObjets)
+})
 
+boutonAppartements.addEventListener("click", async function(){
+   const creationAppartement = creation.filter(article => article.categoryId ===2)
+   genererCreation(creationAppartement)  
+})
 
 boutonHotelsRestaurants.addEventListener("click", function(){
-    sectionGallery.innerHTML="";
+    const creationHotelAppartements = creation.filter(article => article.categoryId === 3)
+    genererCreation(creationHotelAppartements)
 })
