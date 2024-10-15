@@ -156,10 +156,7 @@ li:hover {
 	background-color: #1D6154;
 	color: white;
 }
-.tous{
-	width: 100px;
-}
-.objets{
+.tous, .bouton-1{
 	width: 100px;
 }
 .filtres button:hover{
