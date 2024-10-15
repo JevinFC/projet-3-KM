@@ -20,7 +20,7 @@ async function login() {
         const reponseApiLogin = await ApiLogin.json()
         console.log("res"+JSON.stringify(reponseApiLogin))
         if(reponseApiLogin.token){
-            // window.location.href= "index.html"
+            window.location.href= "index.html"
             window.sessionStorage.setItem("token", JSON.stringify(reponseApiLogin.token))
         }else{
             messageError.textContent = "Mauvais mot de passe ou mail";

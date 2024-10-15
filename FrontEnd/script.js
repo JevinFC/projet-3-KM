@@ -16,12 +16,13 @@ const boutonObjets = document.querySelector(".bouton-1")
 const boutonAppartements = document.querySelector(".bouton-2")
 const boutonHotelsRestaurants = document.querySelector(".bouton-3")
 const sectionGallery = document.querySelector(".gallery")
+let filtres = document.querySelector(".filtres");
 
 async function genererCreation(creation) {
     sectionGallery.innerHTML = ""
     for (let i = 0; i < creation.length; i++) {
         const article = creation[i];
-        console.log(article)
+        
 
         //Création des éléments 
         const figureGallery = document.createElement("figure")
@@ -46,7 +47,6 @@ async function genererBoutons(){
             throw new Error(`${reponse.status} : ${reponse.statusText}`);
         }
         let categories = await reponseCategories.json();
-        let filtres = document.querySelector(".filtres");
         filtres.innerHTML=" ";
 
         categories.forEach(category => {
@@ -79,4 +79,29 @@ async function genererBoutons(){
 genererBoutons();
 
 genererCreation(creation);
+
+
+    const token = sessionStorage.getItem("token");
+    const loginLink = document.querySelector(".lien-login");
+
+    if (token) {
+        
+        const templateLogin = document.getElementById("logged-in-template").content;
+        const newElement = document.importNode(templateLogin, true);
+        const logoutLink = newElement.querySelector("#logout-link");
+
+       
+        logoutLink.onclick = function(event) {
+            event.preventDefault(); 
+            sessionStorage.removeItem("token");
+            location.reload();
+        };
+
+        loginLink.parentElement.replaceChild(newElement, loginLink);
+
+        filtres.style.display= 'none'
+    }else{
+        console.log("pas de token")
+    }
+
 
