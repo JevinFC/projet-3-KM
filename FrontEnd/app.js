@@ -49,20 +49,23 @@ document.querySelectorAll('.close-modale').forEach(button => {
     button.addEventListener("click", closeModale);
 });
 
-const galleryModale = document.querySelector(".gallery-modale")
+const galleryModale = document.querySelector(".gallery-modale");
 
 async function ajouterImgModale(creations) {
-    galleryModale.innerHTML = ""
-    for (let i = 0; i < creations.length; i++) {
-        const article = creations[i];
+    galleryModale.innerHTML = "";
+    creations.forEach(article => {
         
         //Création des éléments 
-        const figureGalleryModale = document.createElement("figure")
+        const figureGalleryModale = document.createElement("figure");
 
-        const imageGalleryModale = document.createElement("img")
-        imageGalleryModale.src = article.imageUrl
+        const imageGalleryModale = document.createElement("img");
+        imageGalleryModale.src = article.imageUrl;
         
-        figureGalleryModale.appendChild(imageGalleryModale)
-        galleryModale.appendChild(figureGalleryModale)
-    }
+        const iconSupprimer = document.createElement("span");
+        iconSupprimer.classList.add("icone-supprimer");
+        iconSupprimer.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+        figureGalleryModale.appendChild(iconSupprimer);
+        figureGalleryModale.appendChild(imageGalleryModale);
+        galleryModale.appendChild(figureGalleryModale);
+    })
 }

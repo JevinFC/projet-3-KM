@@ -295,13 +295,19 @@ footer{
 	width: 500px;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	gap: 10px;
 	margin-bottom: 60px;
-	}
+}
 .gallery-modale img{
 	width: 78px;
 	height: 104px;
-	padding: 10px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.gallery-modale figure {
+	margin-left: -15px;  /* Supprime les marges sur les éléments figure */
+	padding: 0;
+	position: relative;
 }
 .close-modale{
 	cursor: pointer;
@@ -336,9 +342,9 @@ hr{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Couleur noire semi-transparente */
-    display: none; /* Par défaut caché */
-    z-index: 10; /* Derrière la modale mais devant tout le reste */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 10;
 }
 .hidden{
 display: none;
@@ -352,4 +358,17 @@ display: none;
     color: #000;
 	margin-bottom: 50px;
 	margin-top: 60px;
+}
+.icone-supprimer{
+	cursor: pointer;
+	position:relative;
+	top: -80px;
+	right: -73px;
+	color: white;
+	background-color: #000;
+	border-radius: 5px;
+    padding: 4px;
+}
+.icone-supprimer i{
+	font-size: 15px;
 }
