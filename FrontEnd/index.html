@@ -6,11 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
-<body>
+<body class="body">
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
@@ -20,7 +21,7 @@
 			<a class="lien-login" href="login.html"><li>login</li></a>
 			<template id="logged-in-template">
 				<li>
-					<a class="lien-login" id="logout-link" href="#">logout</a>
+					<a class="lien-login" id="logout-link" href="#">logout</a> <!-- Je garde la classe lien-login pour le css -->
 				</li>
 			</template>
 			<li><a href="https://www.instagram.com" target="_blank"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
@@ -41,8 +42,56 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
+		<div id="template-modifier" class="hidden">
+			<a href="#modale1" class="lienModale"><i class="fa-regular fa-pen-to-square"></i>modifier</a>
+		</div>
+		<div id="backdrop" class="hidden"></div>
+		<aside id="modale1" class="modale" aria-hidden="true" role="dialog" aria-labelledby="GallerieModale" style="display: none;">
+			<div class="modal-wrapper">
+				<span class="close-modale"><i class="fa-solid fa-x"></i></span>
+				<h3 id="h3modale">Galerie Photo</h3>
+				
+				<div class="gallery-modale">
+					<!-- <figure>
+						<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
+					</figure>
+					<figure>
+						<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
+					</figure>
+					<figure>
+						<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
+					</figure>
+					<figure>
+						<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
+					</figure>
+					<figure>
+						<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
+					</figure>
+					<figure>
+						<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
+					</figure>
+					<figure>
+						<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
+					</figure>
+					<figure>
+						<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
+					</figure>
+					<figure>
+						<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
+					</figure>
+					<figure>
+						<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
+					</figure>
+					<figure>
+						<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
+					</figure> -->
+				</div>
+				<hr>
+				<button class="add-photos">Ajouter des photos</button>
+			</div>
+		</aside>
 		<div class="filtres">
-			<button class="tous">Tous</button>
+			<!-- <button class="tous">Tous</button> -->
 			<!-- <button class="objets">Objets</button>
 			<button class="appartements">Appartements</button>
 			<button class="hotels-restaurants">Hotels & restaurants</button> -->
@@ -73,6 +122,6 @@
 	</nav>
 </footer>
 <script type="module" src="script.js"></script>
-<script type="module" src="login.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>
