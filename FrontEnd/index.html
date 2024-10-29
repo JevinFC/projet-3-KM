@@ -47,47 +47,37 @@
 		</div>
 		<div id="backdrop" class="hidden"></div>
 		<aside id="modale1" class="modale" aria-hidden="true" role="dialog" aria-labelledby="GallerieModale" style="display: none;">
+			<span class="close-modale"><i class="fa-solid fa-x"></i></span>
 			<div class="modal-wrapper">
-				<span class="close-modale"><i class="fa-solid fa-x"></i></span>
+				
 				<h3 id="h3modale">Galerie Photo</h3>
 				
 				<div class="gallery-modale">
-					<!-- <figure>
-						<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-					</figure>
-					<figure>
-						<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-					</figure>
-					<figure>
-						<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-					</figure>
-					<figure>
-						<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-					</figure>
-					<figure>
-						<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-					</figure>
-					<figure>
-						<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-					</figure>
-					<figure>
-						<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-					</figure>
-					<figure>
-						<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-					</figure>
-					<figure>
-						<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-					</figure>
-					<figure>
-						<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-					</figure>
-					<figure>
-						<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-					</figure> -->
+
 				</div>
 				<hr>
 				<button class="add-photos">Ajouter des photos</button>
+			</div>
+		</aside>
+		
+		<aside id=modale2 class="modale" aria-hidden="true" role="dialog" aria-labelledby="GallerieModale" style="display: none;">
+			<span class="revenir"><i class="fa-solid fa-arrow-left"></i></span>
+			<span class="close-modale"><i class="fa-solid fa-x"></i></span>
+			<div class="modal-wrapper">
+				<h3 id="h3modale">Ajout Photos</h3>
+				<div class="ajoutPhotos">
+					<i class="fa-regular fa-image"></i>
+					<input type="file" id="photo" name="image" accept="images" placeholder="+ ajouter photo" required multiple>
+					<span>jpg, png, 4mo max</span>
+				</div>
+				<form action="post">
+					<label for="titre">Titre</label>
+					<input type="text" name="titre" id="titre" required>
+					<label for="categorie">Catégories</label>
+					<select name="categorie" id="categorie" required></select>
+					<hr>
+					<input type="submit" name="valider" id="valider" placeholder="Valider">
+				</form>
 			</div>
 		</aside>
 		<div class="filtres">

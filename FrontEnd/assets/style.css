@@ -305,7 +305,7 @@ footer{
 	box-sizing: border-box;
 }
 .gallery-modale figure {
-	margin-left: -15px;  /* Supprime les marges sur les éléments figure */
+	margin-left: -15px;
 	padding: 0;
 	position: relative;
 }
@@ -371,4 +371,10 @@ display: none;
 }
 .icone-supprimer i{
 	font-size: 15px;
+}
+.revenir{
+	cursor: pointer;
+	position: absolute;
+	top: 26px;
+	left: 30px;
 }

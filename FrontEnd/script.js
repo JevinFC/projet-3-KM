@@ -20,12 +20,11 @@ const boutonHotelsRestaurants = document.querySelector(".bouton-3")
 const sectionGallery = document.querySelector(".gallery")
 let filtres = document.querySelector(".filtres");
 
-async function genererCreation(creations) {
+export async function genererCreation(creations) {
+    console.log(creations)
     sectionGallery.innerHTML = ""
-    for (let i = 0; i < creations.length; i++) {
-        const article = creations[i];
+    creations.forEach(article =>{
         
-
         //Création des éléments 
         const figureGallery = document.createElement("figure")
 
@@ -37,7 +36,7 @@ async function genererCreation(creations) {
         figureGallery.appendChild(imageGallery)
         figureGallery.appendChild(nomElement)
         sectionGallery.appendChild(figureGallery)
-    }
+    });
 }
 export {creations}
 
@@ -147,7 +146,6 @@ genererCreation(creations);
         const mesProjets = document.querySelector("#portfolio h2");
         
         mesProjets.appendChild(templateModifier);
-        
     }else{
         console.log("pas de token");
     }
