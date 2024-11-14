@@ -65,19 +65,45 @@
 			<span class="close-modale"><i class="fa-solid fa-x"></i></span>
 			<div class="modal-wrapper">
 				<h3 id="h3modale">Ajout Photos</h3>
+				<form action="post" class="form-modale2">
+					<div class="preview hidden">
+						<img src="" alt="photo ajoutée par la modale" id="previewPhoto">
+					</div>
 				<div class="ajoutPhotos">
-					<i class="fa-regular fa-image"></i>
-					<input type="file" id="photo" name="image" accept="images" placeholder="+ ajouter photo" required multiple>
-					<span>jpg, png, 4mo max</span>
+					<div class="enlever">
+						<i class="fa-regular fa-image"></i>
+						<label for="photo" class="boutonAjouterPhotos">+ Ajouter photo</label>
+						<input type="file" id="photo" name="image" accept="images" placeholder="+ ajouter photo" required>
+						<span class="jpgPng">jpg, png, 4mo max</span>
+					</div>
 				</div>
-				<form action="post">
-					<label for="titre">Titre</label>
-					<input type="text" name="titre" id="titre" required>
+				<!-- <form action="post" class="form-modale2"> -->
+					<label for="title">Titre</label>
+					<input type="text" name="title" id="title" required>
+					<label for="categorie">Catégories</label>
+					<select name="categorie" id="categorie" required></select>
+					<hr>
+					<p class="errorImg hidden"></p>
+					<p class="errorTitle hidden"></p>
+					<p class="errorCategorie hidden"></p>
+					<input type="submit" name="valider" id="valider" placeholder="Valider" disabled>
+					
+				</form>
+				<!-- <div class="ajoutPhotos">
+					<i class="fa-regular fa-image"></i>
+					<button class="boutonAjouterPhotos">+ Ajouter photo</button>
+					<span class="jpgPng">jpg, png, 4mo max</span>
+				</div>
+				<form action="post" class="form-modale2">
+					<label for="photo">Label2</label>
+					<input type="file" id="photo" name="image" accept="images" placeholder="+ ajouter photo" required>
+					<label for="title">Titre</label>
+					<input type="text" name="title" id="title" required>
 					<label for="categorie">Catégories</label>
 					<select name="categorie" id="categorie" required></select>
 					<hr>
 					<input type="submit" name="valider" id="valider" placeholder="Valider">
-				</form>
+				</form> -->
 			</div>
 		</aside>
 		<div class="filtres">
