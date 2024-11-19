@@ -1,10 +1,6 @@
 import { creations, genererCreation, categories } from "./script.js";
 
-// const templateModifier = document.getElementById("template-modifier");
-// if (templateModifier) {
-//     const clone = document.importNode(templateModifier.content, true);
-//     document.getElementById("portfolio").appendChild(clone);
-// }
+
 
 const openModale = function (event) {
   try {
@@ -67,7 +63,6 @@ document.querySelectorAll(".close-modale").forEach((button) => {
 async function supprimerImg(id) {
   try {
     const token = JSON.parse(sessionStorage.getItem("token"));
-    console.log("Token: ", token);
 
     if (!token) {
       console.error("pas de token");
@@ -174,21 +169,12 @@ document.querySelector(".revenir").addEventListener("click", revenirModale);
 const btnAjout = document.querySelector(".boutonAjouterPhotos");
 const inputFile = document.getElementById("photo");
 
-// btnAjout.addEventListener("click", function () {
-//   inputFile.click();
-// });
+
 
 const boutonSelect = document.getElementById("categorie");
 
 async function selectCategories() {
   try {
-    // const reponse = await fetch("http://localhost:5678/api/categories");
-
-    // if (!reponse.ok) {
-    //   throw new Error(`${reponse.status} : ${reponse.statusText}`);
-    // }
-
-    // const categories = await reponse.json();
 
     categories.forEach((category) => {
       let option = document.createElement("option");
@@ -213,18 +199,12 @@ let imgOk = false;
 const errorImg = document.querySelector(".errorImg");
 const errorTitle = document.querySelector(".errorTitle");
 const errorCategorie = document.querySelector(".errorCategorie");
-// function togglePreview() {
-//   document.querySelector(".preview").classList.toggle("hidden");
-//   document.querySelector(".ajoutPhotos").classList.toggle("hidden");
-//   console.log("test");
-// }
 
 function ajoutListeners() {
   inputFile.addEventListener("change", function (event) {
     const maxFileSize = 4 * 1024 * 1024;
     if (this.files && this.files[0]) {
       const myFile = this.files[0];
-      console.log(typeof myFile.type);
       if (myFile.size > maxFileSize) {
         errorImg.classList.remove("hidden");
         errorImg.textContent = "Votre fichier est trop volumineux";
@@ -284,8 +264,6 @@ function activationBouton() {
   } else {
     boutonValider.disabled = true;
   }
-  console.log("categorieOk:", categorieOk, "titleOk:", titleOk, "imgOk:", imgOk
-  );
 }
 
 formAddPhotos.addEventListener("submit", async (e) => {
@@ -316,7 +294,7 @@ formAddPhotos.addEventListener("submit", async (e) => {
     }
 
     const newCreation = await reponse.json();
-    console.log("nouvelle creation ajoutée :", newCreation);
+  
 
     creations.push(newCreation);
     genererCreation(creations);
