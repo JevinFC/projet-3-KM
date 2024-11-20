@@ -23,12 +23,7 @@ async function login() {
 
     if (reponseApiLogin.token) {
       window.location.href = "index.html";
-      window.sessionStorage.setItem(
-        "token",
-        JSON.stringify(reponseApiLogin.token)
-      );
-    } else {
-      messageError.textContent = "Mauvais mot de passe ou mail";
+      window.sessionStorage.setItem("token",JSON.stringify(reponseApiLogin.token));
     }
   } catch (error) {
     console.error("Problème : ", error.message);

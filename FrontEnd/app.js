@@ -33,7 +33,6 @@ const closeModale = function () {
   try {
     const modaleActive = document.querySelector(".modale-active");
     if (modaleActive) {
-      // togglePreview();
       modaleActive.style.display = "none";
       modaleActive.setAttribute("aria-hidden", "true");
       modaleActive.removeAttribute("aria-modal");
@@ -41,9 +40,6 @@ const closeModale = function () {
       backdrop.style.display = "none";
       formAddPhotos.reset();
       resetAjoutPhoto();
-      // if (img) {
-      //   img.src = "";
-      // }
     } else {
       console.error("Modale non trouvée pour fermer");
     }

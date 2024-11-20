@@ -40,10 +40,7 @@ function createCategoryButton(category) {
 
   category.id === 0 ? button.classList.add("active") : null;
   button.addEventListener("click", (event) => {
-    let filtered =
-      category.id === 0
-        ? creations
-        : creations.filter((work) => work.categoryId === category.id);
+    let filtered = category.id === 0 ? creations : creations.filter((work) => work.categoryId === category.id);
     genererCreation(filtered);
 
     document.querySelector(".filterBoutons.active").classList.remove("active");
@@ -67,15 +64,14 @@ async function createButtonBox(categories) {
 
 const reponseCategories = await fetch("http://localhost:5678/api/categories");
 if (!reponseCategories.ok) {
-  throw new Error(
-    `${reponseCategories.status} : ${reponseCategories.statusText}`
-  );
+  throw new Error(`${reponseCategories.status} : ${reponseCategories.statusText}`);
 }
 export let categories = await reponseCategories.json();
 
 createButtonBox(categories);
 
 genererCreation(creations);
+console.log(creations)
 
 const token = sessionStorage.getItem("token");
 const lienLogin = document.querySelector(".lien-login");
